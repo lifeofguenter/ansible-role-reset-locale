@@ -1,44 +1,21 @@
 ---
 
-- name: create locales
-  sudo: True
-  locale_gen: name={{ locale }} state=present
+- include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- name: update-locale
-  sudo: True
-  command: update-locale LC_ALL={{ locale }} LANG={{ locale }}
-  when: ansible_os_family == "Debian"
-
-
-- name: install libselinux-python binary for Ansible to work
-  sudo: True
-  yum: name=libselinux-python state=present
+- name: install libselinux-python dep for rhel/centos
+  yum:
+    name: libselinux-python
+    state: present
+  become: yes
   when: ansible_pkg_mgr == "yum"
 
 - name: stop accepting locale env vars from your client to the server
-  sudo: True
   lineinfile:
-    dest: /etc/ssh/sshd_config  
-    regexp: "^AcceptEnv LANG LC_(.+)"  
+    dest: /etc/ssh/sshd_config
+    regexp: "^AcceptEnv LANG LC_(.+)"
     line: "#AcceptEnv LANG LC_\\1"
     backrefs: yes
   when: locale_stop
-  register: sshd_config
-
-
-#
-# SSH daemon name:
-#   - "ssh" in Debian/Ubuntu
-#   - "sshd" in RHEL/CentOS
-#
-# @see http://www.cyberciti.biz/faq/howto-restart-ssh/
-#
-- name: restart SSHd, if necessary
-  sudo: True
-  service: name={{ item }}  state=reloaded
-  when: sshd_config|changed
-  with_items:
-    - ssh
-    - sshd
-  ignore_errors: true
+  become: yes
+  notify: restart_{{ ssh_service_name }}
