@@ -1,11 +1,10 @@
+[![Build Status](https://travis-ci.org/lifeofguenter/ansible-role-php7-fpm.svg?branch=master)](https://travis-ci.org/lifeofguenter/ansible-role-php7-fpm)
 
-williamyeh.reset-locale for Ansible Galaxy
-============
-
+# lifeofguenter.reset-locale for Ansible Galaxy
 
 ## Summary
 
-Role name in Ansible Galaxy: **[williamyeh.reset-locale](https://galaxy.ansible.com/list#/roles/2716)**
+Forked from: **[williamyeh.reset-locale](https://galaxy.ansible.com/list#/roles/2716)**
 
 This Ansible role has the following features:
 
@@ -21,7 +20,6 @@ This role is simply an attempt to solve the following problem:
 If you prefer a more complete locale solution, try alternatives such as [f500.locale](https://galaxy.ansible.com/list#/roles/647), [Stouts.locale](https://galaxy.ansible.com/list#/roles/828), [cecepm.locale](https://galaxy.ansible.com/list#/roles/2188), and [ssilab.locales](https://galaxy.ansible.com/list#/roles/1515).
 
 
-
 ## Role Variables
 
 ### Optional variables
@@ -33,16 +31,15 @@ User-configurable defaults:
 locale: "en_US.UTF-8"
 
 # stop accepting locale env vars from your client to the server?
-locale_stop: True
+locale_stop: true
 ```
 
 
 ## Usage
 
-
 ### Step 1: add role
 
-Add role name `williamyeh.reset-locale` to your playbook file.
+Add role name `lifeofguenter.reset-locale` to your playbook file.
 
 
 ### Step 2: add variables
@@ -58,12 +55,11 @@ Simple example:
 - hosts: all
 
   roles:
-    - williamyeh.reset-locale
+    - lifeofguenter.reset-locale
 
   vars:
     locale: "en_US.UTF-8"
 ```
-
 
 
 ## Dependencies
@@ -74,8 +70,3 @@ None.
 ## License
 
 Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
-
-
-## History
-
-Rewritten from my pre-Galaxy version: [server-config-template](https://github.com/William-Yeh/server-config-template).

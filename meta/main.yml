@@ -1,26 +1,24 @@
 ---
-# meta/main.yml
 
 galaxy_info:
-    author: williamyeh
-    description: Reset locale
-    license: MIT
-    min_ansible_version: 1.6
-
-    platforms:
-        - name: Ubuntu
-          versions:
-              - precise
-              - trusty
-        - name: Debian
-          versions:
-              - wheezy
-        - name: EL
-          versions:
-              - 6
-              - 7
-
-    categories:
-        - system
-
+  author: Gunter Grodotzki
+  description: Reset locale
+  company: 9JKH (Pty) Ltd.
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - trusty
+    - name: Debian
+      versions:
+        - stretch
+        - jessie
+    - name: EL
+      versions:
+        - 7
+        - 6
+  galaxy_tags:
+    - system
 dependencies: []
