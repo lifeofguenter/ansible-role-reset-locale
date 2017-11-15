@@ -18,4 +18,4 @@
     backrefs: yes
   when: locale_stop
   become: yes
-  notify: restart_{{ ssh_service_name }}
+  notify: reload_{{ ssh_service_name }}
