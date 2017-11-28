@@ -5,6 +5,7 @@
 - name: check if sshd is installed
   command: dpkg -L openssh-server
   register: openssh_server_dpkg
+  ignore_errors: yes
 
 - import_tasks: ssh.yml
   when:
