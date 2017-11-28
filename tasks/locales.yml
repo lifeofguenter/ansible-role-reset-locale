@@ -17,6 +17,3 @@
 - name: update-locale
   command: update-locale LC_ALL={{ locale }} LANG={{ locale }}
   become: yes
-
-- set_fact:
-    ssh_service_name: ssh

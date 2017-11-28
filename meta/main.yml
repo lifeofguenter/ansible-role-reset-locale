@@ -15,10 +15,6 @@ galaxy_info:
       versions:
         - stretch
         - jessie
-    - name: EL
-      versions:
-        - 7
-        - 6
   galaxy_tags:
     - system
 dependencies: []
