@@ -1,21 +1,12 @@
 ---
 
-- include_tasks: debian.yml
-  when: ansible_os_family == "Debian"
+- import_tasks: locales.yml
 
-- name: install libselinux-python dep for rhel/centos
-  yum:
-    name: libselinux-python
-    state: present
-  become: yes
-  when: ansible_pkg_mgr == "yum"
+- name: check if sshd is installed
+  command: dpkg -L openssh-server
+  register: openssh_server_dpkg
 
-- name: stop accepting locale env vars from your client to the server
-  lineinfile:
-    dest: /etc/ssh/sshd_config
-    regexp: "^AcceptEnv LANG LC_(.+)"
-    line: "#AcceptEnv LANG LC_\\1"
-    backrefs: yes
-  when: locale_stop
-  become: yes
-  notify: reload_{{ ssh_service_name }}
+- import_tasks: ssh.yml
+  when:
+    - locale_stop | default(true) | bool
+    - openssh_server_dpkg | succeeded

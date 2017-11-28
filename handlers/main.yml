@@ -5,9 +5,3 @@
     name: ssh
     state: reloaded
   become: yes
-
-- name: reload_sshd
-  service:
-    name: sshd
-    state: reloaded
-  become: yes

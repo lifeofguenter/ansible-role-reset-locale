@@ -1,0 +1,10 @@
+---
+
+- name: stop accepting locale env vars from your client to the server
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^AcceptEnv LANG LC_(.+)"
+    line: "#AcceptEnv LANG LC_\\1"
+    backrefs: yes
+  become: yes
+  notify: reload_ssh
