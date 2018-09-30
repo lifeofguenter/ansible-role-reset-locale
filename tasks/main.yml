@@ -10,4 +10,4 @@
 - import_tasks: ssh.yml
   when:
     - locale_stop | default(true) | bool
-    - openssh_server_dpkg | succeeded
+    - openssh_server_dpkg is succeeded
