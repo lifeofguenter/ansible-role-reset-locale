@@ -11,3 +11,5 @@
   when:
     - locale_stop | default(true) | bool
     - openssh_server_dpkg is succeeded
+
+- import_tasks: remove.yml
