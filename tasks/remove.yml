@@ -1,0 +1,8 @@
+---
+
+- name: remove any global profile config
+  lineinfile:
+    path: /etc/profile
+    state: absent
+    regexp: '^export (LANG|LANGUAGE|LC_ALL)='
+  become: yes
