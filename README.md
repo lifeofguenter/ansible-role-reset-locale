@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/lifeofguenter/ansible-role-reset-locale.svg?branch=master)](https://travis-ci.org/lifeofguenter/ansible-role-reset-locale)
-
 # lifeofguenter.reset-locale
+
+[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-reset-locale.svg?branch=master)](https://travis-ci.com/lifeofguenter/ansible-role-reset-locale)
 
 ## Summary
 

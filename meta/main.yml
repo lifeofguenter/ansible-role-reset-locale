@@ -3,17 +3,18 @@
 galaxy_info:
   author: Gunter Grodotzki
   description: Reset locale
-  company: 9JKH (Pty) Ltd.
   license: MIT
-  min_ansible_version: 2.6
+  min_ansible_version: 2.7
   platforms:
     - name: Ubuntu
       versions:
+        - focal
         - bionic
         - xenial
         - trusty
     - name: Debian
       versions:
+        - buster
         - stretch
         - jessie
   galaxy_tags:
