@@ -1,7 +1,5 @@
 # lifeofguenter.reset-locale
 
-[![Build Status](https://travis-ci.com/lifeofguenter/ansible-role-reset-locale.svg?branch=master)](https://travis-ci.com/lifeofguenter/ansible-role-reset-locale)
-
 ## Summary
 
 Forked from: **[williamyeh.reset-locale](https://galaxy.ansible.com/list#/roles/2716)**
@@ -13,7 +11,7 @@ This Ansible role has the following features:
 
 This role is simply an attempt to solve the following problem:
 
-> "your locale in your local machine is set to XXX, which SSH forwards to and tries to use on the server, but your server does not have it installed."  
+> "your locale in your local machine is set to XXX, which SSH forwards to and tries to use on the server, but your server does not have it installed."
 > Source: [Ask Ubuntu](http://askubuntu.com/questions/144235/locale-variables-have-no-effect-in-remote-shell-perl-warning-setting-locale-f)
 
 

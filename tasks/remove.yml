@@ -1,8 +1,8 @@
 ---
 
-- name: remove any global profile config
-  lineinfile:
+- name: Remove any global profile config
+  ansible.builtin.lineinfile:
     path: /etc/profile
     state: absent
     regexp: '^export (LANG|LANGUAGE|LC_ALL)='
-  become: yes
+  become: true

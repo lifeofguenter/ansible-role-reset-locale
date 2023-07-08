@@ -1,16 +1,19 @@
 ---
 
-- import_tasks: locales.yml
+- name: Import locales.yml
+  ansible.builtin.import_tasks: locales.yml
 
-- name: check if sshd is installed
-  command: dpkg -L openssh-server
+- name: Check if sshd is installed
+  ansible.builtin.command: dpkg -L openssh-server
   register: openssh_server_dpkg
-  ignore_errors: yes
-  changed_when: no
+  ignore_errors: true
+  changed_when: false
 
-- import_tasks: ssh.yml
+- name: Import ssh.yml
+  ansible.builtin.import_tasks: ssh.yml
   when:
     - locale_stop | default(true) | bool
     - openssh_server_dpkg is succeeded
 
-- import_tasks: remove.yml
+- name: Import remove.yml
+  ansible.builtin.import_tasks: remove.yml
