@@ -1,22 +1,27 @@
 ---
 
 galaxy_info:
-  author: Gunter Grodotzki
+  role_name: reset_locale
+  namespace: lifeofguenter
+  author: Günter Grodotzki
   description: Reset locale
   license: MIT
-  min_ansible_version: 2.7
+  min_ansible_version: '2.10'
   platforms:
-    - name: Ubuntu
-      versions:
-        - focal
-        - bionic
-        - xenial
-        - trusty
     - name: Debian
       versions:
+        - bookworm
+        - bullseye
         - buster
-        - stretch
-        - jessie
+    - name: Ubuntu
+      versions:
+        - jammy
+        - focal
+        - bionic
   galaxy_tags:
     - system
+
 dependencies: []
+
+collections:
+  - community.general

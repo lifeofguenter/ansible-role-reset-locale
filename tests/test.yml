@@ -1,6 +1,8 @@
 ---
 
 - hosts: localhost
-  remote_user: root
-  roles:
-    - ansible-role-reset-locale
+
+  tasks:
+    - name: Import project role
+      ansible.builtin.import_role:
+        name: project
