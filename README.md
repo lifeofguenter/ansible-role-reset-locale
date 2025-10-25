@@ -37,7 +37,7 @@ locale_stop: true
 
 ### Step 1: add role
 
-Add role name `lifeofguenter.reset-locale` to your playbook file.
+Add role name `lifeofguenter.reset_locale` to your playbook file.
 
 
 ### Step 2: add variables
@@ -53,7 +53,7 @@ Simple example:
 - hosts: all
 
   roles:
-    - lifeofguenter.reset-locale
+    - lifeofguenter.reset_locale
 
   vars:
     locale: "en_US.UTF-8"
@@ -70,4 +70,4 @@ Licensed under the MIT License. See the [LICENSE file](LICENSE) for details.
 
 ## Author Information
 
-[Gunter Grodotzki](https://lifeofguenter.de)
+[Günter Grodotzki](https://www.lifeofguenter.de)
