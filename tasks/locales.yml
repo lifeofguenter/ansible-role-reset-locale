@@ -5,7 +5,7 @@
     name: locales
     state: present
     update_cache: "{{ reset_locale_apt_update_cache | default(true) | bool }}"
-    cache_valid_time: 3600
+    cache_valid_time: "{% if reset_locale_apt_update_cache | default(true) | bool %}3600{% else %}0{% endif %}"
   become: true
 
 - name: Create locales
